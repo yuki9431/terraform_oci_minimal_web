@@ -1,25 +1,5 @@
-# VCN
-locals {
-  vcn = {
-    compartment_id = var.compartment_id
-    cidr_block     = "192.100.0.0/16"
-    display_name   = "terraform_vcn"
-    dns_label      = "terraformvcn"
-  }
-
-  label = "terraform"
-}
-
-module "vcn" {
-  source = "../modules/vcn"
-
-  vcn   = local.vcn
-  label = local.label
-}
-
 # subnets
 locals {
-
   public_cidr_block  = cidrsubnet(module.vcn.instance.cidr_block, 8, 100) # = "192.100.100.0/24"
   private_cidr_block = cidrsubnet(module.vcn.instance.cidr_block, 8, 200) # = "192.100.200.0/24"
 
@@ -49,7 +29,7 @@ locals {
 }
 
 module "subnets" {
-  source = "../modules/subnet"
+  source  = "../modules/subnet"
 
   subnets = local.subnets
 }
