@@ -6,7 +6,7 @@ locals {
     shape                 = "10Mbps-Micro"
     subnet_ids            = [module.subnets.instances.public_subnet.id]
     private               = false
-    nsg_ids               = null
+    nsg_ids               = [module.network_security_groups.nsgs.nsg-lb.id]
     defined_tags          = null
     freeform_tags         = null
   }

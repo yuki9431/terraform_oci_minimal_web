@@ -13,7 +13,7 @@ locals {
 
     private_ip              = null
     shape                   = "VM.Standard2.1"
-    nsg_ids                 = null
+    nsg_ids                 = [module.network_security_groups.nsgs.nsg-web.id]
     subnet_id               = module.subnets.instances.private_subnet.id
 
     source_id               = local.image_oracle_linux7
