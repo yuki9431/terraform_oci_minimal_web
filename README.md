@@ -1,6 +1,6 @@
 # Overview
 create this resource on oci.
-<img src=https://grimoire.tokyo/wp-content/uploads/2020/10/oci_terraform.png>
+<img src=https://github.com/yuki9431/Demo/blob/master/terraform_oci_minimal_web/oci_terraform.png>
 
 # QuickStart
 ```shell
